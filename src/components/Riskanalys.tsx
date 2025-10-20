@@ -1,18 +1,25 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { api } from '@/services/api';
-import { toast } from '@/hooks/use-toast';
-import { Plus, Trash2 } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { api } from "@/services/api";
+import { toast } from "@/hooks/use-toast";
+import { Plus, Trash2 } from "lucide-react";
 
 interface Risk {
-  id: number;
+  id?: number;
   krav: string;
   konsekvens: string;
   forebygga: string;
   atgard: string;
+  __isNew: boolean;
 }
 
 export const Riskanalys = () => {
@@ -27,38 +34,42 @@ export const Riskanalys = () => {
       const result = await api.getRiskanalys();
       setRisker(result);
     } catch (error) {
-      console.error('Fel vid laddning:', error);
+      console.error("Fel vid laddning:", error);
     }
   };
 
   const handleSave = async () => {
     try {
       await api.saveRiskanalys(risker);
-      toast({ title: 'Sparat!', description: 'Riskanalys har sparats.' });
+      toast({ title: "Sparat!", description: "Riskanalys har sparats." });
     } catch (error) {
-      toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
+      toast({
+        title: "Fel",
+        description: "Kunde inte spara data.",
+        variant: "destructive",
+      });
     }
   };
 
   const addRow = () => {
-    const newId = Math.max(...risker.map(r => r.id), 0) + 1;
-    setRisker([...risker, {
-      id: newId,
-      krav: '',
-      konsekvens: '3',
-      forebygga: '',
-      atgard: ''
-    }]);
+    setRisker([
+      ...risker,
+      {
+        krav: "",
+        konsekvens: "3",
+        forebygga: "",
+        atgard: "",
+        __isNew: true, // markör för ny rad
+      },
+    ]);
   };
 
   const removeRow = (id: number) => {
-    setRisker(risker.filter(r => r.id !== id));
+    setRisker(risker.filter((r) => r.id !== id));
   };
 
   const updateRow = (id: number, field: keyof Risk, value: string) => {
-    setRisker(risker.map(r => 
-      r.id === id ? { ...r, [field]: value } : r
-    ));
+    setRisker(risker.map((r) => (r.id === id ? { ...r, [field]: value } : r)));
   };
 
   return (
@@ -77,9 +88,15 @@ export const Riskanalys = () => {
               <thead>
                 <tr className="border-b">
                   <th className="text-left p-2 font-semibold">Krav</th>
-                  <th className="text-left p-2 font-semibold w-32">Konsekvens (1-5)</th>
-                  <th className="text-left p-2 font-semibold">Åtgärd för att förebygga</th>
-                  <th className="text-left p-2 font-semibold">Åtgärd ifall det händer</th>
+                  <th className="text-left p-2 font-semibold w-32">
+                    Konsekvens (1-5)
+                  </th>
+                  <th className="text-left p-2 font-semibold">
+                    Åtgärd för att förebygga
+                  </th>
+                  <th className="text-left p-2 font-semibold">
+                    Åtgärd ifall det händer
+                  </th>
                   <th className="w-10"></th>
                 </tr>
               </thead>
@@ -89,13 +106,17 @@ export const Riskanalys = () => {
                     <td className="p-2">
                       <Input
                         value={risk.krav}
-                        onChange={(e) => updateRow(risk.id, 'krav', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(risk.id, "krav", e.target.value)
+                        }
                       />
                     </td>
                     <td className="p-2">
                       <Select
                         value={risk.konsekvens}
-                        onValueChange={(value) => updateRow(risk.id, 'konsekvens', value)}
+                        onValueChange={(value) =>
+                          updateRow(risk.id, "konsekvens", value)
+                        }
                       >
                         <SelectTrigger>
                           <SelectValue />
@@ -112,13 +133,17 @@ export const Riskanalys = () => {
                     <td className="p-2">
                       <Input
                         value={risk.forebygga}
-                        onChange={(e) => updateRow(risk.id, 'forebygga', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(risk.id, "forebygga", e.target.value)
+                        }
                       />
                     </td>
                     <td className="p-2">
                       <Input
                         value={risk.atgard}
-                        onChange={(e) => updateRow(risk.id, 'atgard', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(risk.id, "atgard", e.target.value)
+                        }
                       />
                     </td>
                     <td className="p-2">
@@ -138,7 +163,9 @@ export const Riskanalys = () => {
         </CardContent>
       </Card>
 
-      <Button onClick={handleSave} className="w-full">Spara Riskanalys</Button>
+      <Button onClick={handleSave} className="w-full">
+        Spara Riskanalys
+      </Button>
     </div>
   );
 };

@@ -157,6 +157,13 @@
     {
       "id": "1",
       "krav": "test",
+      "konsekvens": "5",
+      "forebygga": "",
+      "atgard": ""
+    },
+    {
+      "id": "ad46",
+      "krav": "hej",
       "konsekvens": "3",
       "forebygga": "",
       "atgard": ""
