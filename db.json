@@ -1,7 +1,7 @@
 {
   "projektoutline": {
     "studio": {
-      "lokaler": 2,
+      "lokaler": 6,
       "oppettider": "Mån-Fre 06:00-21:00",
       "placering": "Södermalm, Stockholm"
     },
@@ -19,17 +19,17 @@
       "priser": "Drop-in: 150kr, 10-klippkort: 1200kr..."
     },
     "nulage": {
-      "bokning": "",
+      "bokning": "test",
       "bra": "",
       "daligt": ""
     }
   },
   "projektdirektiv": {
-    "projektledare": "",
+    "projektledare": "test",
     "datum": "",
     "budget": "1,5 MSEK",
     "tidsram": "3 veckor",
-    "bakgrund": "",
+    "bakgrund": "hejhej",
     "mal_overgripande": "",
     "delmal": "",
     "omfattning_ingar": "",
@@ -39,19 +39,57 @@
   },
   "intressenter": [
     {
-      "id": 1,
-      "intressent": "",
+      "id": "1",
+      "intressent": "test",
       "roll": "",
       "behov": "",
       "forvantningar": "",
       "inflytande": "medel",
       "intresse": "medel"
+    },
+    {
+      "id": "419d",
+      "intressent": "hej",
+      "roll": "",
+      "behov": "",
+      "forvantningar": "",
+      "inflytande": "medel",
+      "intresse": "medel"
+    },
+    {
+      "id": "b859",
+      "intressent": "hejhej",
+      "roll": "",
+      "behov": "tre",
+      "forvantningar": "",
+      "inflytande": "medel",
+      "intresse": "medel"
+    },
+    {
+      "id": "920a",
+      "intressent": "",
+      "roll": "",
+      "behov": "",
+      "forvantningar": "",
+      "inflytande": "hög",
+      "intresse": "medel"
     }
   ],
   "personas": [
     {
-      "id": 1,
-      "namn": "",
+      "id": "1",
+      "namn": "hej",
+      "alder": "24",
+      "yrke": "",
+      "teknisk_kunskap": "3",
+      "mal": "",
+      "frustrationer": "",
+      "behov": "",
+      "citat": ""
+    },
+    {
+      "id": "fc0b",
+      "namn": "testar",
       "alder": "",
       "yrke": "",
       "teknisk_kunskap": "3",
@@ -72,6 +110,18 @@
       {
         "id": "FK-002",
         "krav": "Avboka klass",
+        "beskrivning": "test",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-003",
+        "krav": "",
+        "beskrivning": "hej",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-004",
+        "krav": "tet",
         "beskrivning": "",
         "moscow": "must"
       }
@@ -80,15 +130,33 @@
       {
         "id": "IFK-001",
         "kategori": "prestanda",
+        "beskrivning": "test",
+        "prioritet": "must"
+      },
+      {
+        "id": "IFK-002",
+        "kategori": "prestanda",
+        "beskrivning": "h",
+        "prioritet": "must"
+      },
+      {
+        "id": "IFK-003",
+        "kategori": "prestanda",
         "beskrivning": "",
+        "prioritet": "should"
+      },
+      {
+        "id": "IFK-004",
+        "kategori": "prestanda",
+        "beskrivning": "hej",
         "prioritet": "must"
       }
     ]
   },
   "riskanalys": [
     {
-      "id": 1,
-      "krav": "",
+      "id": "1",
+      "krav": "test",
       "konsekvens": "3",
       "forebygga": "",
       "atgard": ""

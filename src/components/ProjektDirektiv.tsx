@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { api } from '@/services/api';
-import { toast } from '@/hooks/use-toast';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { api } from "@/services/api";
+import { toast } from "@/hooks/use-toast";
 
 export const ProjektDirektiv = () => {
   const [data, setData] = useState<any>({
-    projektledare: '',
-    datum: '',
-    budget: '1,5 MSEK',
-    tidsram: '3 veckor',
-    bakgrund: '',
-    mal_overgripande: '',
-    delmal: '',
-    omfattning_ingar: '',
-    omfattning_ingar_inte: '',
-    affarsnytta_kvant: '',
-    affarsnytta_kval: ''
+    projektledare: "",
+    datum: "",
+    budget: "1,5 MSEK",
+    tidsram: "3 veckor",
+    bakgrund: "",
+    mal_overgripande: "",
+    delmal: "",
+    omfattning_ingar: "",
+    omfattning_ingar_inte: "",
+    affarsnytta_kvant: "",
+    affarsnytta_kval: "",
   });
 
   useEffect(() => {
@@ -31,16 +31,21 @@ export const ProjektDirektiv = () => {
       const result = await api.getProjektdirektiv();
       setData(result);
     } catch (error) {
-      console.error('Fel vid laddning:', error);
+      console.error("Fel vid laddning:", error);
     }
   };
 
   const handleSave = async () => {
+    console.log(data);
     try {
       await api.saveProjektdirektiv(data);
-      toast({ title: 'Sparat!', description: 'Projektdirektiv har sparats.' });
+      toast({ title: "Sparat!", description: "Projektdirektiv har sparats." });
     } catch (error) {
-      toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
+      toast({
+        title: "Fel",
+        description: "Kunde inte spara data.",
+        variant: "destructive",
+      });
     }
   };
 
@@ -56,7 +61,9 @@ export const ProjektDirektiv = () => {
               <Label>Projektledare</Label>
               <Input
                 value={data.projektledare}
-                onChange={(e) => setData({ ...data, projektledare: e.target.value })}
+                onChange={(e) =>
+                  setData({ ...data, projektledare: e.target.value })
+                }
               />
             </div>
             <div>
@@ -108,7 +115,9 @@ export const ProjektDirektiv = () => {
             <Label>Övergripande mål</Label>
             <Textarea
               value={data.mal_overgripande}
-              onChange={(e) => setData({ ...data, mal_overgripande: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, mal_overgripande: e.target.value })
+              }
               rows={3}
             />
           </div>
@@ -133,7 +142,9 @@ export const ProjektDirektiv = () => {
             <Label>Ingår i projektet</Label>
             <Textarea
               value={data.omfattning_ingar}
-              onChange={(e) => setData({ ...data, omfattning_ingar: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, omfattning_ingar: e.target.value })
+              }
               rows={3}
             />
           </div>
@@ -141,7 +152,9 @@ export const ProjektDirektiv = () => {
             <Label>Ingår INTE (Avgränsningar)</Label>
             <Textarea
               value={data.omfattning_ingar_inte}
-              onChange={(e) => setData({ ...data, omfattning_ingar_inte: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, omfattning_ingar_inte: e.target.value })
+              }
               rows={3}
             />
           </div>
@@ -157,7 +170,9 @@ export const ProjektDirektiv = () => {
             <Label>Kvantitativa fördelar</Label>
             <Textarea
               value={data.affarsnytta_kvant}
-              onChange={(e) => setData({ ...data, affarsnytta_kvant: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, affarsnytta_kvant: e.target.value })
+              }
               placeholder="t.ex. Minska admin 10h/vecka"
               rows={3}
             />
@@ -166,7 +181,9 @@ export const ProjektDirektiv = () => {
             <Label>Kvalitativa fördelar</Label>
             <Textarea
               value={data.affarsnytta_kval}
-              onChange={(e) => setData({ ...data, affarsnytta_kval: e.target.value })}
+              onChange={(e) =>
+                setData({ ...data, affarsnytta_kval: e.target.value })
+              }
               placeholder="t.ex. Förbättrad kundupplevelse"
               rows={3}
             />
@@ -174,7 +191,9 @@ export const ProjektDirektiv = () => {
         </CardContent>
       </Card>
 
-      <Button onClick={handleSave} className="w-full">Spara Projektdirektiv</Button>
+      <Button onClick={handleSave} className="w-full">
+        Spara Projektdirektiv
+      </Button>
     </div>
   );
 };

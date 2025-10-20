@@ -1,16 +1,22 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { api } from '@/services/api';
-import { toast } from '@/hooks/use-toast';
-import { Plus, Trash2 } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { api } from "@/services/api";
+import { toast } from "@/hooks/use-toast";
+import { Plus, Trash2 } from "lucide-react";
 
 interface Persona {
-  id: number;
+  id?: number;
   namn: string;
   alder: string;
   yrke: string;
@@ -19,6 +25,7 @@ interface Persona {
   frustrationer: string;
   behov: string;
   citat: string;
+  __isNew: boolean;
 }
 
 export const Personas = () => {
@@ -33,44 +40,52 @@ export const Personas = () => {
       const result = await api.getPersonas();
       setPersonas(result || []);
     } catch (error) {
-      console.error('Fel vid laddning:', error);
+      console.error("Fel vid laddning:", error);
       setPersonas([]);
     }
   };
 
   const handleSave = async () => {
     try {
-      await api.savePersonas(personas);
-      toast({ title: 'Sparat!', description: 'Personas har sparats.' });
+      const saved = await api.savePersonas(personas);
+      setPersonas(saved); // nu får alla nya personas sina riktiga id
+      toast({ title: "Sparat!", description: "Personas har sparats." });
     } catch (error) {
-      console.error('Sparfel:', error);
-      toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
+      console.error("Sparfel:", error);
+      toast({
+        title: "Fel",
+        description: "Kunde inte spara data.",
+        variant: "destructive",
+      });
     }
   };
 
   const addPersona = () => {
-    const newId = Math.max(...personas.map(p => p.id), 0) + 1;
-    setPersonas([...personas, {
-      id: newId,
-      namn: '',
-      alder: '',
-      yrke: '',
-      teknisk_kunskap: '3',
-      mal: '',
-      frustrationer: '',
-      behov: '',
-      citat: ''
-    }]);
+    setPersonas([
+      ...personas,
+      {
+        // OBS: inget id
+        namn: "",
+        alder: "",
+        yrke: "",
+        teknisk_kunskap: "3",
+        mal: "",
+        frustrationer: "",
+        behov: "",
+        citat: "",
+        __isNew: true, // markör så vi vet att detta är en ny post
+      },
+    ]);
   };
 
   const removePersona = (id: number) => {
-    setPersonas(personas.filter(p => p.id !== id));
+    setPersonas(personas.filter((p) => p.id !== id));
   };
 
   const updatePersona = (id: number, field: keyof Persona, value: string) => {
-    setPersonas(personas.map(p => 
-      p.id === id ? { ...p, [field]: value } : p
-    ));
+    setPersonas(
+      personas.map((p) => (p.id === id ? { ...p, [field]: value } : p))
+    );
   };
 
   return (
@@ -84,9 +99,9 @@ export const Personas = () => {
       </div>
 
       {personas.map((persona) => (
-        <Card key={persona.id}>
+        <Card key={persona.namn}>
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>{persona.namn || 'Ny Persona'}</CardTitle>
+            <CardTitle>{persona.namn || "Ny Persona"}</CardTitle>
             <Button
               variant="ghost"
               size="icon"
@@ -100,7 +115,9 @@ export const Personas = () => {
               <Label>Personanamn</Label>
               <Input
                 value={persona.namn}
-                onChange={(e) => updatePersona(persona.id, 'namn', e.target.value)}
+                onChange={(e) =>
+                  updatePersona(persona.id, "namn", e.target.value)
+                }
               />
             </div>
 
@@ -109,14 +126,18 @@ export const Personas = () => {
                 <Label>Ålder</Label>
                 <Input
                   value={persona.alder}
-                  onChange={(e) => updatePersona(persona.id, 'alder', e.target.value)}
+                  onChange={(e) =>
+                    updatePersona(persona.id, "alder", e.target.value)
+                  }
                 />
               </div>
               <div>
                 <Label>Yrke</Label>
                 <Input
                   value={persona.yrke}
-                  onChange={(e) => updatePersona(persona.id, 'yrke', e.target.value)}
+                  onChange={(e) =>
+                    updatePersona(persona.id, "yrke", e.target.value)
+                  }
                 />
               </div>
             </div>
@@ -125,7 +146,9 @@ export const Personas = () => {
               <Label>Teknisk kunskap (1-5)</Label>
               <Select
                 value={persona.teknisk_kunskap}
-                onValueChange={(value) => updatePersona(persona.id, 'teknisk_kunskap', value)}
+                onValueChange={(value) =>
+                  updatePersona(persona.id, "teknisk_kunskap", value)
+                }
               >
                 <SelectTrigger>
                   <SelectValue />
@@ -144,7 +167,9 @@ export const Personas = () => {
               <Label>Mål</Label>
               <Textarea
                 value={persona.mal}
-                onChange={(e) => updatePersona(persona.id, 'mal', e.target.value)}
+                onChange={(e) =>
+                  updatePersona(persona.id, "mal", e.target.value)
+                }
                 placeholder="Lista 3-5 mål denna persona har"
                 rows={3}
               />
@@ -154,7 +179,9 @@ export const Personas = () => {
               <Label>Frustrationer/Problem</Label>
               <Textarea
                 value={persona.frustrationer}
-                onChange={(e) => updatePersona(persona.id, 'frustrationer', e.target.value)}
+                onChange={(e) =>
+                  updatePersona(persona.id, "frustrationer", e.target.value)
+                }
                 rows={3}
               />
             </div>
@@ -163,7 +190,9 @@ export const Personas = () => {
               <Label>Behov från bokningssystemet</Label>
               <Textarea
                 value={persona.behov}
-                onChange={(e) => updatePersona(persona.id, 'behov', e.target.value)}
+                onChange={(e) =>
+                  updatePersona(persona.id, "behov", e.target.value)
+                }
                 rows={3}
               />
             </div>
@@ -172,7 +201,9 @@ export const Personas = () => {
               <Label>Citat</Label>
               <Textarea
                 value={persona.citat}
-                onChange={(e) => updatePersona(persona.id, 'citat', e.target.value)}
+                onChange={(e) =>
+                  updatePersona(persona.id, "citat", e.target.value)
+                }
                 placeholder="Ett representativt citat från denna persona"
               />
             </div>
@@ -181,7 +212,9 @@ export const Personas = () => {
       ))}
 
       {personas.length > 0 && (
-        <Button onClick={handleSave} className="w-full">Spara Personas</Button>
+        <Button onClick={handleSave} className="w-full">
+          Spara Personas
+        </Button>
       )}
     </div>
   );

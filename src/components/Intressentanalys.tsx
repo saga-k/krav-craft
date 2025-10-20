@@ -1,20 +1,27 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { api } from '@/services/api';
-import { toast } from '@/hooks/use-toast';
-import { Plus, Trash2 } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { api } from "@/services/api";
+import { toast } from "@/hooks/use-toast";
+import { Plus, Trash2 } from "lucide-react";
 
 interface Intressent {
-  id: number;
+  id?: number;
   intressent: string;
   roll: string;
   behov: string;
   forvantningar: string;
   inflytande: string;
   intresse: string;
+  __isNew: boolean;
 }
 
 export const Intressentanalys = () => {
@@ -29,7 +36,7 @@ export const Intressentanalys = () => {
       const result = await api.getIntressenter();
       setIntressenter(result || []);
     } catch (error) {
-      console.error('Fel vid laddning:', error);
+      console.error("Fel vid laddning:", error);
       setIntressenter([]);
     }
   };
@@ -37,34 +44,40 @@ export const Intressentanalys = () => {
   const handleSave = async () => {
     try {
       await api.saveIntressenter(intressenter);
-      toast({ title: 'Sparat!', description: 'Intressentanalys har sparats.' });
+      toast({ title: "Sparat!", description: "Intressentanalys har sparats." });
     } catch (error) {
-      console.error('Sparfel:', error);
-      toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
+      console.error("Sparfel:", error);
+      toast({
+        title: "Fel",
+        description: "Kunde inte spara data.",
+        variant: "destructive",
+      });
     }
   };
 
   const addRow = () => {
-    const newId = Math.max(...intressenter.map(i => i.id), 0) + 1;
-    setIntressenter([...intressenter, {
-      id: newId,
-      intressent: '',
-      roll: '',
-      behov: '',
-      forvantningar: '',
-      inflytande: 'medel',
-      intresse: 'medel'
-    }]);
+    setIntressenter([
+      ...intressenter,
+      {
+        intressent: "",
+        roll: "",
+        behov: "",
+        forvantningar: "",
+        inflytande: "medel",
+        intresse: "medel",
+        __isNew: true, // markör för ny rad
+      },
+    ]);
   };
 
   const removeRow = (id: number) => {
-    setIntressenter(intressenter.filter(i => i.id !== id));
+    setIntressenter(intressenter.filter((i) => i.id !== id));
   };
 
   const updateRow = (id: number, field: keyof Intressent, value: string) => {
-    setIntressenter(intressenter.map(i => 
-      i.id === id ? { ...i, [field]: value } : i
-    ));
+    setIntressenter(
+      intressenter.map((i) => (i.id === id ? { ...i, [field]: value } : i))
+    );
   };
 
   return (
@@ -97,31 +110,45 @@ export const Intressentanalys = () => {
                     <td className="p-2">
                       <Input
                         value={intressent.intressent}
-                        onChange={(e) => updateRow(intressent.id, 'intressent', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(intressent.id, "intressent", e.target.value)
+                        }
                       />
                     </td>
                     <td className="p-2">
                       <Input
                         value={intressent.roll}
-                        onChange={(e) => updateRow(intressent.id, 'roll', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(intressent.id, "roll", e.target.value)
+                        }
                       />
                     </td>
                     <td className="p-2">
                       <Input
                         value={intressent.behov}
-                        onChange={(e) => updateRow(intressent.id, 'behov', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(intressent.id, "behov", e.target.value)
+                        }
                       />
                     </td>
                     <td className="p-2">
                       <Input
                         value={intressent.forvantningar}
-                        onChange={(e) => updateRow(intressent.id, 'forvantningar', e.target.value)}
+                        onChange={(e) =>
+                          updateRow(
+                            intressent.id,
+                            "forvantningar",
+                            e.target.value
+                          )
+                        }
                       />
                     </td>
                     <td className="p-2">
                       <Select
                         value={intressent.inflytande}
-                        onValueChange={(value) => updateRow(intressent.id, 'inflytande', value)}
+                        onValueChange={(value) =>
+                          updateRow(intressent.id, "inflytande", value)
+                        }
                       >
                         <SelectTrigger>
                           <SelectValue />
@@ -136,7 +163,9 @@ export const Intressentanalys = () => {
                     <td className="p-2">
                       <Select
                         value={intressent.intresse}
-                        onValueChange={(value) => updateRow(intressent.id, 'intresse', value)}
+                        onValueChange={(value) =>
+                          updateRow(intressent.id, "intresse", value)
+                        }
                       >
                         <SelectTrigger>
                           <SelectValue />
@@ -165,7 +194,9 @@ export const Intressentanalys = () => {
         </CardContent>
       </Card>
 
-      <Button onClick={handleSave} className="w-full">Spara Intressentanalys</Button>
+      <Button onClick={handleSave} className="w-full">
+        Spara Intressentanalys
+      </Button>
     </div>
   );
 };
