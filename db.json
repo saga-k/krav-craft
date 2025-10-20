@@ -1,0 +1,97 @@
+{
+  "projektoutline": {
+    "studio": {
+      "lokaler": 2,
+      "oppettider": "Mån-Fre 06:00-21:00",
+      "placering": "Södermalm, Stockholm"
+    },
+    "personal": {
+      "instruktorer": 5,
+      "admin": 2
+    },
+    "verksamhet": {
+      "klasser": 30,
+      "kapacitet": 12,
+      "kunder": 200,
+      "klasstyper": "Hatha, Vinyasa, Yin..."
+    },
+    "ekonomi": {
+      "priser": "Drop-in: 150kr, 10-klippkort: 1200kr..."
+    },
+    "nulage": {
+      "bokning": "",
+      "bra": "",
+      "daligt": ""
+    }
+  },
+  "projektdirektiv": {
+    "projektledare": "",
+    "datum": "",
+    "budget": "1,5 MSEK",
+    "tidsram": "3 veckor",
+    "bakgrund": "",
+    "mal_overgripande": "",
+    "delmal": "",
+    "omfattning_ingar": "",
+    "omfattning_ingar_inte": "",
+    "affarsnytta_kvant": "",
+    "affarsnytta_kval": ""
+  },
+  "intressenter": [
+    {
+      "id": 1,
+      "intressent": "",
+      "roll": "",
+      "behov": "",
+      "forvantningar": "",
+      "inflytande": "medel",
+      "intresse": "medel"
+    }
+  ],
+  "personas": [
+    {
+      "id": 1,
+      "namn": "",
+      "alder": "",
+      "yrke": "",
+      "teknisk_kunskap": "3",
+      "mal": "",
+      "frustrationer": "",
+      "behov": "",
+      "citat": ""
+    }
+  ],
+  "kravspec": {
+    "funktionella": [
+      {
+        "id": "FK-001",
+        "krav": "Boka klass",
+        "beskrivning": "",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-002",
+        "krav": "Avboka klass",
+        "beskrivning": "",
+        "moscow": "must"
+      }
+    ],
+    "ickefunktionella": [
+      {
+        "id": "IFK-001",
+        "kategori": "prestanda",
+        "beskrivning": "",
+        "prioritet": "must"
+      }
+    ]
+  },
+  "riskanalys": [
+    {
+      "id": 1,
+      "krav": "",
+      "konsekvens": "3",
+      "forebygga": "",
+      "atgard": ""
+    }
+  ]
+}
