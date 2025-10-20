@@ -32,18 +32,21 @@ export const Kravspecifikation = () => {
   const loadData = async () => {
     try {
       const result = await api.getKravspec();
-      setFunktionella(result.funktionella);
-      setIckeFunktionella(result.ickefunktionella);
+      setFunktionella(result.funktionella || []);
+      setIckeFunktionella(result.ickefunktionella || []);
     } catch (error) {
       console.error('Fel vid laddning:', error);
+      setFunktionella([]);
+      setIckeFunktionella([]);
     }
   };
 
   const handleSave = async () => {
     try {
-      await api.saveKravspec({ funktionella, ickeFunktionella });
+      await api.saveKravspec({ funktionella, ickefunktionella: ickeFunktionella });
       toast({ title: 'Sparat!', description: 'Kravspecifikation har sparats.' });
     } catch (error) {
+      console.error('Sparfel:', error);
       toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
     }
   };

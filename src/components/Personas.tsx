@@ -31,9 +31,10 @@ export const Personas = () => {
   const loadData = async () => {
     try {
       const result = await api.getPersonas();
-      setPersonas(result);
+      setPersonas(result || []);
     } catch (error) {
       console.error('Fel vid laddning:', error);
+      setPersonas([]);
     }
   };
 
@@ -42,6 +43,7 @@ export const Personas = () => {
       await api.savePersonas(personas);
       toast({ title: 'Sparat!', description: 'Personas har sparats.' });
     } catch (error) {
+      console.error('Sparfel:', error);
       toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
     }
   };

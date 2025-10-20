@@ -27,9 +27,10 @@ export const Intressentanalys = () => {
   const loadData = async () => {
     try {
       const result = await api.getIntressenter();
-      setIntressenter(result);
+      setIntressenter(result || []);
     } catch (error) {
       console.error('Fel vid laddning:', error);
+      setIntressenter([]);
     }
   };
 
@@ -38,6 +39,7 @@ export const Intressentanalys = () => {
       await api.saveIntressenter(intressenter);
       toast({ title: 'Sparat!', description: 'Intressentanalys har sparats.' });
     } catch (error) {
+      console.error('Sparfel:', error);
       toast({ title: 'Fel', description: 'Kunde inte spara data.', variant: 'destructive' });
     }
   };
