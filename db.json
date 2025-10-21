@@ -40,38 +40,74 @@
   "intressenter": [
     {
       "id": "1",
-      "intressent": "test",
-      "roll": "",
-      "behov": "",
-      "forvantningar": "",
-      "inflytande": "medel",
-      "intresse": "medel"
+      "intressent": "Ägare/studiochef",
+      "roll": "Administrativ användare, beställare",
+      "behov": "Att automatiseringen minskar misstag och minskar administrativt arbete",
+      "forvantningar": "Regelbunden avstämmning under projektets gång, har final say kring slutprodukten",
+      "inflytande": "hög",
+      "intresse": "hög"
     },
     {
       "id": "419d",
-      "intressent": "hej",
-      "roll": "",
-      "behov": "",
-      "forvantningar": "",
+      "intressent": "Studions kunder",
+      "roll": "Användare av tjänsten",
+      "behov": "Vill ha ett lättanvänt system",
+      "forvantningar": "Kan vara med i användarintervjuer men ska inte ha insikt i projektarbetet",
       "inflytande": "medel",
       "intresse": "medel"
     },
     {
       "id": "b859",
-      "intressent": "hejhej",
+      "intressent": "Studions personal",
+      "roll": "Administrativ användare",
+      "behov": "Vill ha enkel översikt över klasser och bokningar",
+      "forvantningar": "Skall konsulteras men inte ha final say när det gäller projektets arbete",
+      "inflytande": "medel",
+      "intresse": "hög"
+    },
+    {
+      "id": "920a",
+      "intressent": "Utvecklarteamet/designteamet",
+      "roll": "Skapar produkten",
+      "behov": "Väldefinierade krav, information",
+      "forvantningar": "Skall konsulteras och informeras",
+      "inflytande": "hög",
+      "intresse": "hög"
+    },
+    {
+      "id": "2ab2",
+      "intressent": "Hyresvärden",
+      "roll": "Hyresvärd",
+      "behov": "Kan påverkas ifall beläggningen ökar och studion måste flytta",
+      "forvantningar": "Inga",
+      "inflytande": "låg",
+      "intresse": "låg"
+    },
+    {
+      "id": "a116",
+      "intressent": "",
       "roll": "",
-      "behov": "tre",
+      "behov": "",
       "forvantningar": "",
       "inflytande": "medel",
       "intresse": "medel"
     },
     {
-      "id": "920a",
+      "id": "cab1",
       "intressent": "",
       "roll": "",
       "behov": "",
       "forvantningar": "",
-      "inflytande": "hög",
+      "inflytande": "medel",
+      "intresse": "medel"
+    },
+    {
+      "id": "41a1",
+      "intressent": "",
+      "roll": "",
+      "behov": "",
+      "forvantningar": "",
+      "inflytande": "medel",
       "intresse": "medel"
     }
   ],
