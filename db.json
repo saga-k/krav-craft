@@ -1,27 +1,27 @@
 {
   "projektoutline": {
     "studio": {
-      "lokaler": 6,
+      "lokaler": 1,
       "oppettider": "Mån-Fre 06:00-21:00",
       "placering": "Södermalm, Stockholm"
     },
     "personal": {
       "instruktorer": 5,
-      "admin": 2
+      "admin": 1
     },
     "verksamhet": {
-      "klasser": 30,
-      "kapacitet": 12,
+      "klasser": 25,
+      "kapacitet": 30,
       "kunder": 200,
-      "klasstyper": "Hatha, Vinyasa, Yin..."
+      "klasstyper": "Hatha, Vinyasa, Yin, "
     },
     "ekonomi": {
-      "priser": "Drop-in: 150kr, 10-klippkort: 1200kr..."
+      "priser": "Drop-in: 150kr, 10-klippkort: 1200kr, månadskort: 2000kr "
     },
     "nulage": {
-      "bokning": "test",
+      "bokning": "Allt sker manuellt via mejl och telefon. Jag (studiochefen) sköter all administration själv, och det tar mycket tid.\nJag lägger schemat i ett Excel-ark varje månad, skickar ut till instruktörerna för bekräftelse, och uppdaterar sedan hemsidan manuellt. Det vore fantastiskt att kunna lägga schemat i systemet och att det automatiskt syns för kunderna.",
       "bra": "",
-      "daligt": ""
+      "daligt": "Det blir för mycket admin. "
     }
   },
   "projektdirektiv": {
