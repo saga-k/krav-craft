@@ -13,29 +13,29 @@
       "klasser": 25,
       "kapacitet": 30,
       "kunder": 200,
-      "klasstyper": "Hatha, Vinyasa, Yin, "
+      "klasstyper": "Hatha, Vinyasa, Yin"
     },
     "ekonomi": {
       "priser": "Drop-in: 150kr, 10-klippkort: 1200kr, månadskort: 2000kr "
     },
     "nulage": {
       "bokning": "Allt sker manuellt via mejl och telefon. Jag (studiochefen) sköter all administration själv, och det tar mycket tid.\nJag lägger schemat i ett Excel-ark varje månad, skickar ut till instruktörerna för bekräftelse, och uppdaterar sedan hemsidan manuellt. Det vore fantastiskt att kunna lägga schemat i systemet och att det automatiskt syns för kunderna.",
-      "bra": "",
-      "daligt": "Det blir för mycket admin. "
+      "bra": "Det manuella systemet har fungerat bra tidigare men nu har de växt så pass mycket att det inte längre fungerar. ",
+      "daligt": "Det blir för mycket admin. Det blir misstag, dubbelbokningar, förvirring kring scheman. Svårt att hålla koll på betalningar. "
     }
   },
   "projektdirektiv": {
-    "projektledare": "test",
+    "projektledare": "Saga, Nudem, Moa",
     "datum": "",
     "budget": "1,5 MSEK",
-    "tidsram": "3 veckor",
-    "bakgrund": "hejhej",
-    "mal_overgripande": "",
-    "delmal": "",
-    "omfattning_ingar": "",
-    "omfattning_ingar_inte": "",
-    "affarsnytta_kvant": "",
-    "affarsnytta_kval": ""
+    "tidsram": "3 månader för första realease plus 1 månad för testning och fixar",
+    "bakgrund": "En liten yogastudio i Stockholm vill utveckla ett digitalt bokningssystem. I dagsläget hanteras allt manuellt via e-post och telefonsamtal,vilket tar mycket tid för personalen. De vill ha en modern, lättanvänd lösning där kunder kan boka, avboka och betala för sina klasser online.",
+    "mal_overgripande": "Skapa en digital lösning för hantering av bokningar och betalningar",
+    "delmal": "Minska manuella arbetet för personalen\nGöra möjligt för kunder att boka, avboka och omboka pass\nBetala online",
+    "omfattning_ingar": "Webbaserat bokningssystem (desktop och mobilanpassat)\nKontoregistrering och login\nBetalningsfunktion\nAvbokning, ombokning, bokning funktion\nAdmin panel",
+    "omfattning_ingar_inte": "Projektet omfattar inte utveckling av ett avancerat lojalitetsprogram eller kundklubb\nIntegration med externa ekonomisystem (t.ex. Fortnox, Visma) kan planeras för framtiden men ingår inte i nuvarande budget\nSupport och underhåll efter lansering ingår ej i kontraktet",
+    "affarsnytta_kvant": "Minska administrativt arbete 20h/vecka, vilket möjliggör för kund att lägga tid på affärsutveckling\nÖkad försäljning med ett estimat av 50% baserat på kundundersökningar\n\n",
+    "affarsnytta_kval": "Ökad tillgänglighet för yogastudions kunder då de kan boka pass utanför studions öppettider\nFörbättrad översyn över ekonomin\nFörenklar för personalen när det gäller scheman och klasser"
   },
   "intressenter": [
     {
