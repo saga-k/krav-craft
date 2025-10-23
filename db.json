@@ -190,5 +190,44 @@
       "atgard": "test",
       "sannolikhet": "3"
     }
-  ]
+  ],
+  "tidsresursestimat": {
+    "tidsuppskattning": "",
+    "kostnadsuppskattning": "",
+    "kompetensbehov": "",
+    "faser": "",
+    "beroenden": "",
+    "milstolpar": ""
+  },
+  "genomforandestrategi": {
+    "utvecklingsmetod": "",
+    "iterationer": "",
+    "leveranser": "",
+    "testning": "",
+    "figma": "",
+    "poc": ""
+  },
+  "ekonomiskoversikt": {
+    "utvecklingskostnader": "",
+    "licenser": "",
+    "integration": "",
+    "drift": "",
+    "underhall": "",
+    "support": "",
+    "antaganden": "",
+    "besparingar": ""
+  },
+  "kvalitetoppfoljning": {
+    "kodstandarder": "",
+    "teststrategi": "",
+    "versionshantering": "",
+    "dokumentation": "",
+    "matpunkter": ""
+  },
+  "rekommendation": {
+    "sammanfattning": "",
+    "rekommendation": "",
+    "beslutspunkter": "",
+    "fordjupning": ""
+  }
 }

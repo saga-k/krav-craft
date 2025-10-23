@@ -170,4 +170,54 @@ export const api = {
       throw error;
     }
   },
+
+  // Tids- och resursestimat
+  getTidsresursestimat: async () => {
+    const response = await axios.get(`${API_URL}/tidsresursestimat`);
+    return response.data;
+  },
+  saveTidsresursestimat: async (data: any) => {
+    const response = await axios.put(`${API_URL}/tidsresursestimat`, data);
+    return response.data;
+  },
+
+  // Genomförandestrategi
+  getGenomforandestrategi: async () => {
+    const response = await axios.get(`${API_URL}/genomforandestrategi`);
+    return response.data;
+  },
+  saveGenomforandestrategi: async (data: any) => {
+    const response = await axios.put(`${API_URL}/genomforandestrategi`, data);
+    return response.data;
+  },
+
+  // Ekonomisk översikt
+  getEkonomiskoversikt: async () => {
+    const response = await axios.get(`${API_URL}/ekonomiskoversikt`);
+    return response.data;
+  },
+  saveEkonomiskoversikt: async (data: any) => {
+    const response = await axios.put(`${API_URL}/ekonomiskoversikt`, data);
+    return response.data;
+  },
+
+  // Kvalitet och uppföljning
+  getKvalitetoppfoljning: async () => {
+    const response = await axios.get(`${API_URL}/kvalitetoppfoljning`);
+    return response.data;
+  },
+  saveKvalitetoppfoljning: async (data: any) => {
+    const response = await axios.put(`${API_URL}/kvalitetoppfoljning`, data);
+    return response.data;
+  },
+
+  // Rekommendation och nästa steg
+  getRekommendation: async () => {
+    const response = await axios.get(`${API_URL}/rekommendation`);
+    return response.data;
+  },
+  saveRekommendation: async (data: any) => {
+    const response = await axios.put(`${API_URL}/rekommendation`, data);
+    return response.data;
+  },
 };
