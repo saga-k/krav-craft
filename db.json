@@ -178,7 +178,7 @@
       "id": "1",
       "krav": "test",
       "konsekvens": "5",
-      "forebygga": "",
+      "forebygga": "test",
       "atgard": "",
       "sannolikhet": "4"
     },
@@ -192,42 +192,42 @@
     }
   ],
   "tidsresursestimat": {
-    "tidsuppskattning": "",
-    "kostnadsuppskattning": "",
-    "kompetensbehov": "",
-    "faser": "",
-    "beroenden": "",
-    "milstolpar": ""
+    "tidsuppskattning": "test",
+    "kostnadsuppskattning": "test",
+    "kompetensbehov": "test",
+    "faser": "test",
+    "beroenden": "test",
+    "milstolpar": "test"
   },
   "genomforandestrategi": {
-    "utvecklingsmetod": "",
-    "iterationer": "",
-    "leveranser": "",
-    "testning": "",
-    "figma": "",
-    "poc": ""
+    "utvecklingsmetod": "test",
+    "iterationer": "test",
+    "leveranser": "test",
+    "testning": "test",
+    "figma": "test",
+    "poc": "test"
   },
   "ekonomiskoversikt": {
-    "utvecklingskostnader": "",
-    "licenser": "",
-    "integration": "",
-    "drift": "",
-    "underhall": "",
-    "support": "",
-    "antaganden": "",
-    "besparingar": ""
+    "utvecklingskostnader": "test",
+    "licenser": "test",
+    "integration": "test",
+    "drift": "test",
+    "underhall": "test",
+    "support": "test",
+    "antaganden": "test",
+    "besparingar": "test"
   },
   "kvalitetoppfoljning": {
-    "kodstandarder": "",
-    "teststrategi": "",
-    "versionshantering": "",
-    "dokumentation": "",
-    "matpunkter": ""
+    "kodstandarder": "test",
+    "teststrategi": "test",
+    "versionshantering": "test",
+    "dokumentation": "test",
+    "matpunkter": "test"
   },
   "rekommendation": {
-    "sammanfattning": "",
-    "rekommendation": "",
-    "beslutspunkter": "",
-    "fordjupning": ""
+    "sammanfattning": "test",
+    "rekommendation": "test",
+    "beslutspunkter": "test",
+    "fordjupning": "test"
   }
 }
