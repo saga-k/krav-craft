@@ -86,28 +86,6 @@
   ],
   "personas": [
     {
-      "id": "1",
-      "namn": "hej",
-      "alder": "24",
-      "yrke": "",
-      "teknisk_kunskap": "3",
-      "mal": "",
-      "frustrationer": "",
-      "behov": "",
-      "citat": ""
-    },
-    {
-      "id": "fc0b",
-      "namn": "testar",
-      "alder": "",
-      "yrke": "",
-      "teknisk_kunskap": "3",
-      "mal": "",
-      "frustrationer": "",
-      "behov": "",
-      "citat": ""
-    },
-    {
       "id": "2bf5",
       "namn": "Anna",
       "alder": "34",
