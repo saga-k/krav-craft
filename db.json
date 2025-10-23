@@ -82,58 +82,9 @@
       "forvantningar": "Inga",
       "inflytande": "låg",
       "intresse": "låg"
-    },
-    {
-      "id": "a116",
-      "intressent": "",
-      "roll": "",
-      "behov": "",
-      "forvantningar": "",
-      "inflytande": "medel",
-      "intresse": "medel"
-    },
-    {
-      "id": "cab1",
-      "intressent": "",
-      "roll": "",
-      "behov": "",
-      "forvantningar": "",
-      "inflytande": "medel",
-      "intresse": "medel"
-    },
-    {
-      "id": "41a1",
-      "intressent": "",
-      "roll": "",
-      "behov": "",
-      "forvantningar": "",
-      "inflytande": "medel",
-      "intresse": "medel"
     }
   ],
   "personas": [
-    {
-      "id": "1",
-      "namn": "hej",
-      "alder": "24",
-      "yrke": "",
-      "teknisk_kunskap": "3",
-      "mal": "",
-      "frustrationer": "",
-      "behov": "",
-      "citat": ""
-    },
-    {
-      "id": "fc0b",
-      "namn": "testar",
-      "alder": "",
-      "yrke": "",
-      "teknisk_kunskap": "3",
-      "mal": "",
-      "frustrationer": "",
-      "behov": "",
-      "citat": ""
-    },
     {
       "id": "2bf5",
       "namn": "Anna",
@@ -211,7 +162,7 @@
       {
         "id": "IFK-003",
         "kategori": "prestanda",
-        "beskrivning": "",
+        "beskrivning": "test",
         "prioritet": "should"
       },
       {
@@ -227,17 +178,17 @@
       "id": "1",
       "krav": "test",
       "konsekvens": "5",
-      "sannolikhet": "3",
       "forebygga": "",
-      "atgard": ""
+      "atgard": "",
+      "sannolikhet": "4"
     },
     {
       "id": "ad46",
       "krav": "hej",
       "konsekvens": "3",
-      "sannolikhet": "3",
-      "forebygga": "",
-      "atgard": ""
+      "forebygga": "test",
+      "atgard": "test",
+      "sannolikhet": "3"
     }
   ],
   "tidsresursestimat": {
