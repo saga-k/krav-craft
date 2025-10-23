@@ -227,6 +227,7 @@
       "id": "1",
       "krav": "test",
       "konsekvens": "5",
+      "sannolikhet": "3",
       "forebygga": "",
       "atgard": ""
     },
@@ -234,6 +235,7 @@
       "id": "ad46",
       "krav": "hej",
       "konsekvens": "3",
+      "sannolikhet": "3",
       "forebygga": "",
       "atgard": ""
     }

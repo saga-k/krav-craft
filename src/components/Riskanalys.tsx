@@ -17,6 +17,7 @@ interface Risk {
   id?: number;
   krav: string;
   konsekvens: string;
+  sannolikhet: string;
   forebygga: string;
   atgard: string;
   __isNew: boolean;
@@ -57,6 +58,7 @@ export const Riskanalys = () => {
       {
         krav: "",
         konsekvens: "3",
+        sannolikhet: "3",
         forebygga: "",
         atgard: "",
         __isNew: true, // markör för ny rad
@@ -91,6 +93,9 @@ export const Riskanalys = () => {
                   <th className="text-left p-2 font-semibold w-32">
                     Konsekvens (1-5)
                   </th>
+                  <th className="text-left p-2 font-semibold w-32">
+                    Sannolikhet (1-5)
+                  </th>
                   <th className="text-left p-2 font-semibold">
                     Åtgärd för att förebygga
                   </th>
@@ -116,6 +121,25 @@ export const Riskanalys = () => {
                         value={risk.konsekvens}
                         onValueChange={(value) =>
                           updateRow(risk.id, "konsekvens", value)
+                        }
+                      >
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="1">1 - Mycket låg</SelectItem>
+                          <SelectItem value="2">2 - Låg</SelectItem>
+                          <SelectItem value="3">3 - Medel</SelectItem>
+                          <SelectItem value="4">4 - Hög</SelectItem>
+                          <SelectItem value="5">5 - Mycket hög</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </td>
+                    <td className="p-2">
+                      <Select
+                        value={risk.sannolikhet}
+                        onValueChange={(value) =>
+                          updateRow(risk.id, "sannolikhet", value)
                         }
                       >
                         <SelectTrigger>
