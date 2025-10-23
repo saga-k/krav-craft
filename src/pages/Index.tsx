@@ -6,6 +6,11 @@ import { Intressentanalys } from '@/components/Intressentanalys';
 import { Personas } from '@/components/Personas';
 import { Kravspecifikation } from '@/components/Kravspecifikation';
 import { Riskanalys } from '@/components/Riskanalys';
+import { TidsResursEstimat } from '@/components/TidsResursEstimat';
+import { Genomforandestrategi } from '@/components/Genomforandestrategi';
+import { EkonomiskOversikt } from '@/components/EkonomiskOversikt';
+import { KvalitetOppfoljning } from '@/components/KvalitetOppfoljning';
+import { RekommendationNastaSteg } from '@/components/RekommendationNastaSteg';
 import { FileText } from 'lucide-react';
 
 const Index = () => {
@@ -22,13 +27,18 @@ const Index = () => {
 
       <main className="container mx-auto px-6 py-8">
         <Tabs defaultValue="outline" className="w-full">
-          <TabsList className="grid grid-cols-6 w-full mb-8">
-            <TabsTrigger value="outline">Projektoutline</TabsTrigger>
-            <TabsTrigger value="direktiv">Projektdirektiv</TabsTrigger>
-            <TabsTrigger value="intressenter">Intressenter</TabsTrigger>
-            <TabsTrigger value="personas">Personas</TabsTrigger>
-            <TabsTrigger value="kravspec">Kravspec</TabsTrigger>
-            <TabsTrigger value="risk">Riskanalys</TabsTrigger>
+          <TabsList className="grid grid-cols-3 lg:grid-cols-6 w-full mb-8 h-auto">
+            <TabsTrigger value="outline" className="text-sm">Projektoutline</TabsTrigger>
+            <TabsTrigger value="direktiv" className="text-sm">Projektdirektiv</TabsTrigger>
+            <TabsTrigger value="intressenter" className="text-sm">Intressenter</TabsTrigger>
+            <TabsTrigger value="personas" className="text-sm">Personas</TabsTrigger>
+            <TabsTrigger value="kravspec" className="text-sm">Kravspec</TabsTrigger>
+            <TabsTrigger value="risk" className="text-sm">Riskanalys</TabsTrigger>
+            <TabsTrigger value="tidsresurs" className="text-sm">Tids/Resurs</TabsTrigger>
+            <TabsTrigger value="genomforande" className="text-sm">Genomförande</TabsTrigger>
+            <TabsTrigger value="ekonomi" className="text-sm">Ekonomi</TabsTrigger>
+            <TabsTrigger value="kvalitet" className="text-sm">Kvalitet</TabsTrigger>
+            <TabsTrigger value="rekommendation" className="text-sm">Rekommendation</TabsTrigger>
           </TabsList>
 
           <TabsContent value="outline">
@@ -53,6 +63,26 @@ const Index = () => {
 
           <TabsContent value="risk">
             <Riskanalys />
+          </TabsContent>
+
+          <TabsContent value="tidsresurs">
+            <TidsResursEstimat />
+          </TabsContent>
+
+          <TabsContent value="genomforande">
+            <Genomforandestrategi />
+          </TabsContent>
+
+          <TabsContent value="ekonomi">
+            <EkonomiskOversikt />
+          </TabsContent>
+
+          <TabsContent value="kvalitet">
+            <KvalitetOppfoljning />
+          </TabsContent>
+
+          <TabsContent value="rekommendation">
+            <RekommendationNastaSteg />
           </TabsContent>
         </Tabs>
       </main>
