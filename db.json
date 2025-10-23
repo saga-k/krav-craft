@@ -133,6 +133,39 @@
       "frustrationer": "",
       "behov": "",
       "citat": ""
+    },
+    {
+      "id": "2bf5",
+      "namn": "Anna",
+      "alder": "34",
+      "yrke": "Grafisk designer",
+      "teknisk_kunskap": "4",
+      "mal": "- Kunna boka och betala pass snabbt via mobilen\n- Få påminnelse innan passet börjar\n- Se vilka pass som finns lediga under veckan\n- Kunna avboka enkelt vid sjukdom",
+      "frustrationer": "- Blir frustrerad när bokningar måste göras via mail eller sms\n- Osäker på om hennes plats är bekräftad\n- Svårt att hålla koll på klippkort och hur många gånger hon har kvar",
+      "behov": "- Tydlig översikt över tider och lediga platser\n- Smidig betalning (Swish eller kort)\n- Egen inloggning för att se och hantera bokningar ",
+      "citat": "\"Jag vill bara kunna boka min yoga på bussen på väg hem, utan att behöva maila eller ringa någon.\""
+    },
+    {
+      "id": "e7a1",
+      "namn": "Johan",
+      "alder": "42",
+      "yrke": "Frilansande yogainstruktör",
+      "teknisk_kunskap": "3",
+      "mal": "- Se sitt schema och vilka som är anmälda\n- Kunna meddela om han blir sjuk eller behöver ställa in\n- Ha en enkel kommunikation med yogastudion",
+      "frustrationer": "- Måste ofta fråga via sms om vilka pass han har\n- Får sena avbokningar som inte når fram i tid\n- Känner sig utanför planeringen ibland",
+      "behov": "- Personlig inloggning med schema\n- Notiser vid ändringar eller avbokningar\n- Möjlighet att markera tillgänglighet",
+      "citat": "\"Jag vill slippa jaga information och bara kunna logga in och se mitt schema.\""
+    },
+    {
+      "id": "4c36",
+      "namn": "Jonna",
+      "alder": "48",
+      "yrke": "Ägare och studiochef",
+      "teknisk_kunskap": "2",
+      "mal": "- Få bort manuellt arbete med bokningar och betalningar\n- Ha tydlig statistik över deltagare och ekonomi\n- Kunna planera schemat smidigt och uppdatera sidan enkelt\n- Ge kunder en proffsig och smidig upplevelse",
+      "frustrationer": "- Bokningar via mejl tar för mycket tid\n- Svårt att hålla koll på betalningar\n- För mycket dubbelarbete mellan schema, betalning och hemsida",
+      "behov": "- Allt samlat på ett ställe som bokning, betalning osv\n- Lättanvänt, inget tekniskt krångel\n- Funkar med befintlig hemsida",
+      "citat": "\"Jag vill lägga mindre tid på administration och mer tid på kunderna och mina anställda.\""
     }
   ],
   "kravspec": {
