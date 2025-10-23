@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
+import { api } from "@/services/api";
 
 export const RekommendationNastaSteg = () => {
   const [data, setData] = useState({
@@ -12,17 +13,27 @@ export const RekommendationNastaSteg = () => {
     fordjupning: "",
   });
 
-  const handleSave = () => {
-    localStorage.setItem("rekommendation", JSON.stringify(data));
-    toast({ title: "Sparat!", description: "Rekommendation har sparats." });
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = async () => {
+    try {
+      const result = await api.getRekommendation();
+      setData(result);
+    } catch (error) {
+      console.error("Fel vid laddning:", error);
+    }
   };
 
-  useEffect(() => {
-    const saved = localStorage.getItem("rekommendation");
-    if (saved) {
-      setData(JSON.parse(saved));
+  const handleSave = async () => {
+    try {
+      await api.saveRekommendation(data);
+      toast({ title: "Sparat!", description: "Rekommendation har sparats." });
+    } catch (error) {
+      toast({ title: "Fel", description: "Kunde inte spara data.", variant: "destructive" });
     }
-  }, []);
+  };
 
   return (
     <div className="space-y-6">
