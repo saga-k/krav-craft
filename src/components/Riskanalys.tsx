@@ -89,7 +89,7 @@ export const Riskanalys = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left p-2 font-semibold">Krav</th>
+                  <th className="text-left p-2 font-semibold">Krav / Risk</th>
                   <th className="text-left p-2 font-semibold w-32">
                     Konsekvens (1-5)
                   </th>
