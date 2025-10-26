@@ -200,12 +200,12 @@
     "milstolpar": "test"
   },
   "genomforandestrategi": {
-    "utvecklingsmetod": "test",
-    "iterationer": "test",
-    "leveranser": "test",
-    "testning": "test",
-    "figma": "test",
-    "poc": "test"
+    "utvecklingsmetod": "Vi kommer arbeta med agila projektsmetoden Scrum eftersom projektet kommer kräva flexibilitet och kontinuerlig återkoppling från våra kravställare och från deras användare. \nMed denna metod kan vi arbeta iterativt med täta leveranser, regelbundna användartester och kontinuerliga justeringar baserade på feedback.",
+    "iterationer": "Sprint 1 – PoC & Grundläggande UI\n- Minimal version av bokningsflödet (kund kan se, boka och avboka klasser).\n- Minimal adminfunktion (lägg till/ta bort klasser, se bokningsstatus).\n- Enkel betalningssimulering (utan riktiga transaktioner).\n- Test med 3 kunder och 2 instruktörer för att verifiera funktionalitet och användarvänlighet.\n- Grundläggande användargränssnitt och inloggning.\n\nSprint 2 – Bokningsflöde & Kalendersystem\n- Utveckla fullständigt bokningsflöde.\n- Integrera kalendersystem för klasser och tillgänglighet.\n\nSprint 3 – Betalningsintegration\n- Implementera riktig betalningsfunktion (om PoC var godkänd).\n- Säkerställ betalningsflöde och kvittenser.\n\nSprint 4 – Adminpanel för personal\n- Utveckla fullständig adminpanel för instruktörer och studiochef.\n- Hantera klasser, bokningar och rapporter.\n\nSprint 5 – Notiser, testning och lansering\n- Implementera notiser till kunder och personal.\n- Genomföra sluttestning och användartester.\n- Förbereda lansering och deployment.",
+    "leveranser": "Sprint 1–2: Fungerande prototyp i Figma och enklare bokningsflöde.\n\nSprint 3–4: Fullständig webblösning med betalning och hantering av klasser.\n\nSprint 5: Färdigställd produkt med dokumentation och användarguide.",
+    "testning": "Regelbundna tester under projektets gång:\n\n1. Enhetstester för centrala funktioner (bokning, betalning) - kollar att varje del fungerar som det ska \n2. Integrationstester mellan frontend och backend - att båda delarna integrerar som de ska\n3. Användartester med instruktörer och kunder för att säkerställa enkelhet.\n4. Acceptanstester innan lansering, godkända av studiochefen.",
+    "figma": "Designen för hemsidan tas fram i Figma med fokus på enkelhet och mobilvänlighet.\n\n- Färger och stil baseras på studions befintliga designprofil\n- Wireframes, protoyp, användartest, och justeringar.\n- Designen används som grund för frontend-utvecklingen.",
+    "poc": "- Skapa en enkel prototyp där kunder kan boka/avboka klasser och instruktörer kan lägga till/ta bort klasser samt se bokningsstatus.\n- Testa bokningsflödet med 3 kunder och 2 instruktörer för att verifiera funktionalitet och användarvänlighet.\n- Inkludera enkel betalningssimulering (utan riktiga transaktioner) för att visa hur det ska funka"
   },
   "ekonomiskoversikt": {
     "utvecklingskostnader": "test",
