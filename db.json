@@ -82,6 +82,15 @@
       "forvantningar": "Inga",
       "inflytande": "låg",
       "intresse": "låg"
+    },
+    {
+      "id": "d97f",
+      "intressent": "Tekniska leverantörer",
+      "roll": "Underleverantör",
+      "behov": "inga",
+      "forvantningar": "Vill att fakturorna ska betalas",
+      "inflytande": "låg",
+      "intresse": "låg"
     }
   ],
   "personas": [
