@@ -371,12 +371,12 @@
     }
   ],
   "tidsresursestimat": {
-    "tidsuppskattning": "test",
-    "kostnadsuppskattning": "test",
-    "kompetensbehov": "test",
-    "faser": "test",
-    "beroenden": "test",
-    "milstolpar": "test"
+    "tidsuppskattning": "3 månader",
+    "kostnadsuppskattning": "807 000",
+    "kompetensbehov": "-Utvecklare\n-Ux\n-Projektledning\n-Scrum",
+    "faser": "Sprint 1 – PoC & Grundläggande UI\n- Minimal version av bokningsflödet (kund kan se, boka och avboka klasser).\n- Minimal adminfunktion (lägg till/ta bort klasser, se bokningsstatus).\n- Enkel betalningssimulering (utan riktiga transaktioner).\n- Test med 3 kunder och 2 instruktörer för att verifiera funktionalitet och användarvänlighet.\n- Grundläggande användargränssnitt och inloggning.\n\nSprint 2 – Bokningsflöde & Kalendersystem\n- Utveckla fullständigt bokningsflöde.\n- Integrera kalendersystem för klasser och tillgänglighet.\n\nSprint 3 – Betalningsintegration\n- Implementera riktig betalningsfunktion (om PoC var godkänd).\n- Säkerställ betalningsflöde och kvittenser.\n\nSprint 4 – Adminpanel för personal\n- Utveckla fullständig adminpanel för instruktörer och studiochef.\n- Hantera klasser, bokningar och rapporter.\n\nSprint 5 – Notiser, testning och lansering\n- Implementera notiser till kunder och personal.\n- Genomföra sluttestning och användartester.\n- Förbereda lansering och deployment.",
+    "beroenden": "",
+    "milstolpar": "Möte med beställare sker vid varje avslutat delemoment.\nDelleveranser:\n-Figma prototyp\n-Poc med grundläggande funktionalitet\n-Utökad funktionalitet\n-Deployad version"
   },
   "genomforandestrategi": {
     "utvecklingsmetod": "Vi kommer arbeta med agila projektsmetoden Scrum eftersom projektet kommer kräva flexibilitet och kontinuerlig återkoppling från våra kravställare och från deras användare. \nMed denna metod kan vi arbeta iterativt med täta leveranser, regelbundna användartester och kontinuerliga justeringar baserade på feedback.",
@@ -387,14 +387,14 @@
     "poc": "- Skapa en enkel prototyp där kunder kan boka/avboka klasser och instruktörer kan lägga till/ta bort klasser samt se bokningsstatus.\n- Testa bokningsflödet med 3 kunder och 2 instruktörer för att verifiera funktionalitet och användarvänlighet.\n- Inkludera enkel betalningssimulering (utan riktiga transaktioner) för att visa hur det ska funka"
   },
   "ekonomiskoversikt": {
-    "utvecklingskostnader": "test",
-    "licenser": "test",
-    "integration": "test",
-    "drift": "test",
-    "underhall": "test",
-    "support": "test",
-    "antaganden": "test",
-    "besparingar": "test"
+    "utvecklingskostnader": "Personalkostnader: \n1 designer, 52000 sek per månad\n1 utvecklare, 52000 sek per månad\n1 scrum/utvecklare 71500 kr\n1 produktägare 71500 kr\nPersonalkostnader per månad: 247000 kr\n\nMinsta accepterade Vinstmarginal: 500 000 kr\nAtt jobba för: 1000 000 kr\n\nTidsplan 3 månader blir i totala personalkostnader: 741 000 kr\n\nKontorshyra 15000 kr per månad, 45000 kr för hela projektets gång.",
+    "licenser": "1000 sek per månad + 20 000 initial deployment ",
+    "integration": "Skall inte göras i nuläget",
+    "drift": "Betalas av kund efter leverans",
+    "underhall": "Betalas av kund efter leverans",
+    "support": "Ej i scope",
+    "antaganden": "",
+    "besparingar": ""
   },
   "kvalitetoppfoljning": {
     "kodstandarder": "- Koden ska följa gemensam stilguide för projektet (exempelvis ESLint + Prettier för JavaScript/TypeScript).\n\n- Namngivning ska vara konsekvent och tydlig (engelska variabel- och funktionsnamn, camelCase i kod, PascalCase för komponenter).\n\n- All ny frontendkod ska vara modulär och återanvändbar (komponentbaserad).\n\n- Säkerhet och integritet ska beaktas i all kod som rör bokning och betalning:\n    - Ingen känslig betalinfo sparas i klartext.\n    - Endast nödvändiga personuppgifter lagras.\n\n- Tillgänglighet: gränssnittet ska byggas enligt WCAG-principer",
@@ -404,9 +404,9 @@
     "matpunkter": "- Projekt-KPI under utveckling:\n    - Andel färdiga/klara user stories i backloggen per sprint.\n    - Antal kritiska buggar öppna vs stängda (målet: inga kritiska öppna inför release).\n    - Testtäckning på kärnflöden (bokning/betalning ska alltid vara testade).\n\n- Affärs-/verksamhets-KPI vid driftsättning (vad studion bryr sig om):\n    - Minskad administrationstid: antal bokningsmejl per vecka före vs efter lansering.\n    - Beläggningsgrad per klass: hur många platser som faktiskt fylls.\n    - Antal lyckade bokningar som går hela vägen genom betalning utan manuell hjälp.\n    - Avbokningar i tid (innan 2h-gränsen) – viktigt för studion för att kunna släppa platsen till någon annan.\n"
   },
   "rekommendation": {
-    "sammanfattning": "test",
-    "rekommendation": "test",
-    "beslutspunkter": "test",
-    "fordjupning": "test"
+    "sammanfattning": "Vi kör vidare med projektet, allt ser bra ut. ",
+    "rekommendation": "",
+    "beslutspunkter": "Nästa steg, planera sprintar och tickets i Jira.",
+    "fordjupning": "Mer detaljerade jira tasks och user stories."
   }
 }
