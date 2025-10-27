@@ -82,6 +82,15 @@
       "forvantningar": "Inga",
       "inflytande": "låg",
       "intresse": "låg"
+    },
+    {
+      "id": "d97f",
+      "intressent": "Tekniska leverantörer",
+      "roll": "Underleverantör",
+      "behov": "inga",
+      "forvantningar": "Vill att fakturorna ska betalas",
+      "inflytande": "låg",
+      "intresse": "låg"
     }
   ],
   "personas": [
@@ -123,72 +132,242 @@
     "funktionella": [
       {
         "id": "FK-001",
-        "krav": "Boka klass",
-        "beskrivning": "",
+        "krav": "Användarautentiseting",
+        "beskrivning": "Användare måste kunna registrera ett konto och logga in",
         "moscow": "must"
       },
       {
         "id": "FK-002",
-        "krav": "Avboka klass",
-        "beskrivning": "test",
+        "krav": "Lista med tillgängliga pass ",
+        "beskrivning": "Visa passets namn, tid och instruktör, sorterat på datum",
         "moscow": "must"
       },
       {
         "id": "FK-003",
-        "krav": "",
-        "beskrivning": "hej",
+        "krav": "Boka pass",
+        "beskrivning": "Knapp för att boka ett pass",
         "moscow": "must"
       },
       {
         "id": "FK-004",
-        "krav": "tet",
+        "krav": "Avboka pass",
+        "beskrivning": "Visa bokade pass och knapp för att avboka",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-005",
+        "krav": "Köp av digitalt klippkort eller periodskort ",
+        "beskrivning": "Klippkort eller periodskort kopplas till användarens konto",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-006",
+        "krav": "Betalning vid bokning",
+        "beskrivning": "Vid innehav av klippkort dras ett klipp, vid innehav av periodskort sker ingen betalning, skall även finnas möjlighet till direktbetalning per pass",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-007",
+        "krav": "Kvitto på betalning",
+        "beskrivning": "Via mejl eller i appen",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-008",
+        "krav": "Länk från befintlig wordpress-hemsida",
         "beskrivning": "",
+        "moscow": "should"
+      },
+      {
+        "id": "FK-009",
+        "krav": "Detaljerad klassinformation",
+        "beskrivning": "När en användare klickar på en klass ska en beskrivning av klassen visas, tillsammans med en bokningsknapp",
+        "moscow": "could"
+      },
+      {
+        "id": "FK-010",
+        "krav": "Admin-inloggning",
+        "beskrivning": "Studioschef och instruktörer behöver kunna logga in på en separat sida",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-011",
+        "krav": "Lägga schema",
+        "beskrivning": "Studioschef behöver kunna lägga in klasser och tilldela instruktörer",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-012",
+        "krav": "Visa instruktörsschema",
+        "beskrivning": "Instruktörer behöver kunna se sitt schema med bokade klasser",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-013",
+        "krav": "Sätta priser",
+        "beskrivning": "Studioschefen behöver kunna uppdatera prislistorna",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-014",
+        "krav": "Incheckning på plats",
+        "beskrivning": "Förslagsvis med en QR-kod. ",
+        "moscow": "could"
+      },
+      {
+        "id": "FK-015",
+        "krav": "Beläggningsöversikt, ekonomisk översikt",
+        "beskrivning": "Visa data kring beläggning och försäljning över tid",
+        "moscow": "could"
+      },
+      {
+        "id": "FK-016",
+        "krav": "Integrering med hemsida",
+        "beskrivning": "Iframe / embed / ny hemsida",
+        "moscow": "wont"
+      },
+      {
+        "id": "FK-017",
+        "krav": "Exportera Försäljningsrapporter",
+        "beskrivning": "Behövs för bokföring",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-018",
+        "krav": "Integrering med studions bokföringssytem",
+        "beskrivning": "",
+        "moscow": "could"
+      },
+      {
+        "id": "FK-019",
+        "krav": "Betala med klarna",
+        "beskrivning": "Kopplat till IFK-002. Vi slipper bygga ett eget betalsystem och förenklar utcheckning för kunder vilket kan boosta försäljning rejält",
+        "moscow": "should"
+      },
+      {
+        "id": "FK-020",
+        "krav": "Logga in med google",
+        "beskrivning": "kopplat till IFK-003 IFK-004",
+        "moscow": "should"
+      },
+      {
+        "id": "FK-021",
+        "krav": "Logga in med mejl",
+        "beskrivning": "I de fall användare inte har google konto behövs inloggning med mejl",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-022",
+        "krav": "2fa och lösenordsåtersällning",
+        "beskrivning": "Kopplat till IFK-003",
+        "moscow": "must"
+      },
+      {
+        "id": "FK-023",
+        "krav": "Visa och godkänna integritetspolicy",
+        "beskrivning": "Kopplat till IFK-006",
         "moscow": "must"
       }
     ],
     "ickefunktionella": [
       {
         "id": "IFK-001",
-        "kategori": "prestanda",
-        "beskrivning": "test",
+        "kategori": "anvandbarhet",
+        "beskrivning": "Mobile-first design, viktigt då många bokar pass via mobilen",
         "prioritet": "must"
       },
       {
         "id": "IFK-002",
-        "kategori": "prestanda",
-        "beskrivning": "h",
+        "kategori": "anvandbarhet",
+        "beskrivning": "Enkla betalningar för att förhindra att kunder vänder i kassan",
         "prioritet": "must"
       },
       {
         "id": "IFK-003",
-        "kategori": "prestanda",
-        "beskrivning": "test",
-        "prioritet": "should"
+        "kategori": "sakerhet",
+        "beskrivning": "Säkra inloggningar",
+        "prioritet": "must"
       },
       {
         "id": "IFK-004",
-        "kategori": "prestanda",
-        "beskrivning": "hej",
+        "kategori": "anvandbarhet",
+        "beskrivning": "Enkla inloggningar",
         "prioritet": "must"
+      },
+      {
+        "id": "IFK-005",
+        "kategori": "prestanda",
+        "beskrivning": "Sidladdningar ska max ta 1 sekund, för längre laddtider på upp till 3 sekunder ska en spinner visas",
+        "prioritet": "should"
+      },
+      {
+        "id": "IFK-006",
+        "kategori": "gdpr",
+        "beskrivning": "Integritetspolicy",
+        "prioritet": "must"
+      },
+      {
+        "id": "IFK-007",
+        "kategori": "anvandbarhet",
+        "beskrivning": "Intuitivt UI",
+        "prioritet": "should"
+      },
+      {
+        "id": "IFK-008",
+        "kategori": "branding",
+        "beskrivning": "Design enligt kunds befintliga grafiska profil",
+        "prioritet": "should"
       }
     ]
   },
   "riskanalys": [
     {
       "id": "1",
-      "krav": "test",
-      "konsekvens": "5",
-      "forebygga": "test",
-      "atgard": "",
+      "krav": "Återanvända / Läckta lösenord",
+      "konsekvens": "3",
+      "forebygga": "Inlogg med google och krav på säkra lösenord och 2fa",
+      "atgard": "Det är användarens ansvar att byta lösenord",
       "sannolikhet": "4"
     },
     {
-      "id": "ad46",
-      "krav": "hej",
+      "id": "2354",
+      "krav": "Dubbelbokningar",
       "konsekvens": "3",
-      "forebygga": "test",
-      "atgard": "test",
-      "sannolikhet": "3"
+      "sannolikhet": "2",
+      "forebygga": "Administratör behöver kunna sätta max-antal deltagare per pass, bokning skall låsas efter det",
+      "atgard": "Ifall detta händer beror det på en bugg i koden och utvecklare ska felsöka och åtgärda felet"
+    },
+    {
+      "id": "e0f2",
+      "krav": "Tekniska fel, buggar",
+      "konsekvens": "5",
+      "sannolikhet": "5",
+      "forebygga": "Produkten ska genomgå gedigen testning innan leverans",
+      "atgard": "Utvecklare ska felsöka och åtgärda problemet"
+    },
+    {
+      "id": "f926",
+      "krav": "Konflikter mellan beställare och oss",
+      "konsekvens": "5",
+      "sannolikhet": "3",
+      "forebygga": "Vid projektstart ska ett kontrakt skrivas som innehåller vad som skall göras, vad som inte skall göras, budget och tidsram. ",
+      "atgard": "Ifall meningsskiljaktigheter uppstår, hänvisa till kontraktet. Ifall konflikten inte går att lösa, ta in en jurist. "
+    },
+    {
+      "id": "f40b",
+      "krav": "Försening av leverans på grund av oförutsägbara händelser som sjukdom eller dylikt",
+      "konsekvens": "3",
+      "sannolikhet": "4",
+      "forebygga": "Lägg på lite extra tid när tidsestimat kommuniceras gentemot kund. I kontraktet skall hantering av förseningar inkluderas. ",
+      "atgard": "Kommuncera detta till kund och hänvisa till kontraktet"
+    },
+    {
+      "id": "9a95",
+      "krav": "Fel hos tekniska leverantörer (molntjänster, betaltjänster och dyl.)",
+      "konsekvens": "3",
+      "sannolikhet": "4",
+      "forebygga": "Detta händer och går inte att helt mitigera. Vi kan minska risken genom att endast jobba med stora leverantörer som har resurser för att snabbt åtgärda problemen. ",
+      "atgard": "Kontakta leverantör för uppdatering, informera användarna kring felet"
     }
   ],
   "tidsresursestimat": {
